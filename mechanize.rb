@@ -17,7 +17,7 @@ end
 class FolderCleanup
   def self.cleanup
     FileUtils.rm_rf 'g' if Dir.exists?('g')
-    Dir.mkdir("g")
+    Dir.mkdir('g')
   end
 end
 
@@ -34,7 +34,7 @@ class Scraper
     page = @robot.get(@url)
     loop do
       begin
-        title=page.parser.css("body#documentation div.inner div#content-wrapper div#content div#main.book h1")
+        title=page.parser.css('body#documentation div.inner div#content-wrapper div#content div#main.book h1')
         print "#{title[0].text} "
         print "#{title[1].text}" unless title[1].nil?
         page.save_as 'g/' + title.text + '.html'
@@ -52,5 +52,5 @@ end
 
 
 FolderCleanup.cleanup
-scraper = Scraper.new("http://git-scm.com/book/en/Getting-Started")
+scraper = Scraper.new('http://git-scm.com/book/en/Getting-Started')
 scraper.grab_pages
