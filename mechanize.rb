@@ -1,3 +1,8 @@
+## this is just for practice purposes
+## i already asked my questions
+## and got great answers
+
+
 require 'rubygems'
 require 'mechanize'
 require 'logger'
